@@ -1,0 +1,34 @@
+# Vaultwarden account database, attachments, keys, and runtime data
+/vw-data/
+
+# Local environment secrets (safe examples can be committed)
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Local TLS material and certificate storage
+*.key
+*.pem
+*.pfx
+*.p12
+*.crt
+*.cer
+/caddy_data/
+/caddy_config/
+/docker/caddy_data/
+/docker/caddy_config/
+
+# Local backups and logs
+/docker/backups/
+*.log
+
+# Local editor and operating-system files
+/.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local secret API dependencies and private runtime state
+node_modules/
+/api/.local/
