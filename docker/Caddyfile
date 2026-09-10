@@ -1,0 +1,7 @@
+https://localhost {
+    tls internal
+    reverse_proxy vaultwarden:80
+}
+http://localhost {
+    redir https://localhost:8443{uri} permanent
+}

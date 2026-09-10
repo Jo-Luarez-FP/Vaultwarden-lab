@@ -1,0 +1,17 @@
+{
+  "name": "vaultwarden-lab",
+  "private": true,
+  "packageManager": "pnpm@11.20.0",
+  "scripts": {
+    "start": "pnpm docker:up && pnpm api:start",
+    "docker:up": "docker compose -f docker/docker-compose.yml up -d",
+    "docker:stop": "docker compose -f docker/docker-compose.yml stop",
+    "docker:status": "docker compose -f docker/docker-compose.yml ps",
+    "api:start": "powershell.exe -NoProfile -File api/scripts/start-api.ps1",
+    "api:fetch": "powershell.exe -NoProfile -File api/scripts/fetch-secret.ps1",
+    "test": "node --test api/tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@bitwarden/cli": "2026.8.0"
+  }
+}
